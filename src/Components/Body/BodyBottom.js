@@ -18,7 +18,7 @@ export default function BodyBottom() {
           reports
         </p>
       </div>
-      <button className="submit-btn w-[50%] desktop:w-[70%] m-auto rounded-2xl py-2 text-xs">
+      <button className="submit-btn w-[60%] desktop:w-[70%] m-auto rounded-2xl py-[0.8em] text-xs hover:text-white">
         Start my trial
       </button>
     </div>
