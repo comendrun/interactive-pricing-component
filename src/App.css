@@ -2,15 +2,30 @@
   --Primary-full-side-bar: hsl(174, 77%, 80%);
   --Primary-Slider-Background: hsl(174, 86%, 45%);
   --Primary-Discount-Background: hsl(14, 92%, 95%);
-  --Primary-Discount-Text: hsl(15, 100%, 70%);
+  --Primary-Discount-Text: #rgb(255, 140, 102);
+  --Primary-Discount-Text-low-opacity: #ff8c6634;
   --Primary-CTA-Text: hsl(226, 100%, 87%);
 
   --Neutral-Pricing-Component-Background: hsl (0, 0%, 100%);
   --Neutral-Main-Background: hsl(230, 100%, 99%);
   --Neutral-Empty-Slider-Bar: hsl(224, 65%, 95%);
-  --Neutral-Toggle-Background: hsl(223, 50%, 87%);
+  --Neutral-Toggle-Background: #cdd7ee;
   --Neutral-Text: hsl(225, 20%, 60%);
   --Neutral-Text-CTA-Background: hsl(227, 35%, 25%);
+
+  --app-bg-pos: right 100% top 0%;
+  --app-bg-size: 300%;
+
+  --slider-w: 90%;
+}
+
+@media (min-width: 600px) {
+  :root {
+    --app-bg-pos: right 100% top;
+    --app-bg-size: 100%;
+
+    --slider-w: 100%;
+  }
 }
 
 *,
@@ -22,14 +37,20 @@
   padding: 0;
 }
 
-#root {
+html {
+  background-color: var(--Neutral-Main-Background);
 }
 
 .App {
   /* align-items: center; */
   min-width: 100vw;
   min-height: 100vh;
-  border: 1px solid red;
+  background: url("./Assets/Images/Project-images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-position: var(--app-bg-pos);
+  background-size: var(--app-bg-size);
+  margin-top: 0;
+  margin-bottom: 4rem;
 }
 
 p {
@@ -37,7 +58,6 @@ p {
   color: var(--Neutral-Text);
 }
 h1 {
-  font-size: 25px;
   font-weight: 800;
   color: var(--Neutral-Text-CTA-Background);
 }
@@ -61,6 +81,8 @@ h6 {
 
 .body {
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  z-index: 100;
 }
 
 .submit-btn {
@@ -70,7 +92,7 @@ h6 {
 
 .slider {
   -webkit-appearance: none;
-  width: 90%;
+  width: var(--slider-w);
   height: 8px;
   border-radius: 50px;
   background: #ecf0f9;
@@ -78,6 +100,13 @@ h6 {
   opacity: 1;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
+  background: var(--Neutral-Empty-Slider-Bar);
+  background-image: linear-gradient(
+    var(--Primary-full-side-bar),
+    var(--Primary-full-side-bar)
+  );
+  background-size: 70% 100%;
+  background-repeat: no-repeat;
 }
 
 .slider:hover {
@@ -113,7 +142,21 @@ h6 {
     5px 5px 20px rgba(16, 216, 197, 0.5);
 }
 
-.yearly-active{
+.slider::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+.slider::-moz-range-track {
+  /* background-color: black; */
+}
+.slider::-ms-track {
+  /* background-color: black; */
+}
+
+.yearly-active {
   margin-right: 0;
 }
 
@@ -123,4 +166,97 @@ h6 {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+.kamran-profile {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* border: 1px solid red; */
+  width: max-content;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+  margin-left: auto;
+  margin-right: 3rem;
+  margin-bottom: 3rem;
+  grid-template:
+    "p g a"
+    "l c c"
+    "b c c";
+  /* justify-content: center; */
+  align-items: center;
+
+  transition: all 0.3s ease-in;
+}
+
+.comendrun-img-container {
+  width: 60px;
+  border-radius: 50px;
+  border: 3px solid hsl(174, 86%, 45%);
+  overflow: hidden;
+  cursor: pointer;
+  order: 1;
+  grid-area: c;
+  transition: opacity 0.3s ease-in;
+}
+
+.comendrun-img-container:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  display: flex;
+  border: 1px solid white;
+  border-radius: 50%;
+  padding: 8px;
+  justify-content: center;
+  background-color: rgb(255, 140, 102);
+  cursor: pointer;
+  transition: transform 0.3s ease-in;
+  align-items: center;
+}
+
+.icons {
+  width: 25px;
+  height: 20px;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon * {
+  color: white;
+}
+
+.github {
+  grid-area: g;
+}
+
+.frontend {
+  background-color: white;
+  border: 1px solid rgb(255, 140, 102);
+  padding: 8px;
+}
+
+.frontend-mentor {
+  grid-area: p;
+  width: 18px;
+  height: 20px;
+}
+.linkedin {
+  grid-area: l;
+}
+
+.hidden {
+  /* height: 0;
+  width: 0;
+  padding: 0;
+  opacity: 0;
+  transition: all 0.3s ease; */
+
+  /* color: transparent;
+  background-color: transparent; */
+
+  visibility: hidden;
 }

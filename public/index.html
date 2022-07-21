@@ -13,8 +13,18 @@
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./images/favicon-32x32.png"
+      href="./favicon/favicon-32x32.png"
     />
+
+    <script src="./profile.js" defer></script>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/29114b0cab.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- fontawesome -->
+
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,11 +39,54 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 
-    <div class="attribution">
+    <!-- <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
       >. Coded by <a href="https://comendrun.com/">comendrun</a>.
+    </div> -->
+
+    <div class="kamran-profile">
+      <div title="Github" class="icon github hidden">
+        <a target="_blank" href="https://github.com/comendrun">
+          <i class="fa-brands fa-github-alt icons"></i
+        ></a>
+      </div>
+      <div title="Personal Website" class="icon linkedin hidden">
+        <a target="_blank" href="https://www.linkedin.com/in/comendrun/">
+          <i class="fa-solid fa-globe icons"></i
+        ></a>
+      </div>
+      <div title="Frontend Mentor" class="icon frontend hidden">
+        <a
+          target="_blank"
+          href="https://www.frontendmentor.io/profile/comendrun"
+        >
+          <img
+            src="./frontend-mentor-seeklogo.com.svg"
+            alt=""
+            class="frontend-mentor icons"
+        /></a>
+      </div>
+      <div
+        id="comendrun"
+        title="Click to expand"
+        class="comendrun-img-container"
+        onClick=""
+      >
+        <img class="comendrun-img" src="./comendrun2.jpg" alt="comendrun" />
+      </div>
     </div>
   </body>
+  <script>
+    const allIcons = document.querySelectorAll(".icon");
+    const mainImage = document.getElementById("comendrun");
+
+    mainImage.addEventListener("click", () => {
+      // allIcons.map((icon) => icon.classlist.toggle("hidden"));
+      for (let i = 0; i < allIcons.length; i++) {
+        allIcons[i].classList.toggle("hidden");
+      }
+    });
+  </script>
 </html>
