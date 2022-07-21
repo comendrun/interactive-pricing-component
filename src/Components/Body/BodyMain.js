@@ -4,8 +4,6 @@ import checkImage from "../../Assets/Images/Project-images/icon-check.svg";
 import { useNavigate } from "react-router-dom";
 import { priceData } from "../../priceData";
 
-import { motion } from "framer-motion";
-
 export default function BodyMain() {
   const [isMonthly, setIsMonthly] = useState(true);
   const [sliderNum, setSliderNum] = useState(3);
@@ -18,7 +16,9 @@ export default function BodyMain() {
   const navigate = useNavigate();
 
   const sendToStart = () => {
-    navigate("/start", { state: { sliderNum, isMonthly } });
+    navigate("/interactive-pricing-component/start", {
+      state: { sliderNum, isMonthly },
+    });
   };
 
   return (

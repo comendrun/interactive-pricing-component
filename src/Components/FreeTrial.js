@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { priceData } from "../priceData";
-import { motion } from "framer-motion";
 
 export default function FreeTrial() {
   const location = useLocation();
@@ -38,10 +37,10 @@ export default function FreeTrial() {
           Thank you for choosing us
         </h2>
         <p className="text-md desktop:text-base desktop:">
-          Your free trial begins from now and you can enjoy the ride.
+          Your free trial begins from now on and you can enjoy our product.
         </p>
         <a
-          href="/"
+          href="/interactive-pricing-component"
           className="px-4 py-2 bg-[#293356] hover:bg-[#293356b0]  mx-auto desktop:mx-0 mb-6 ease-in duration-100 text-white w-max text-xs font-light rounded-xl"
         >
           Go to your dashboard
