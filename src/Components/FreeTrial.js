@@ -40,7 +40,7 @@ export default function FreeTrial() {
           Your free trial begins from now on and you can enjoy our product.
         </p>
         <a
-          href="/interactive-pricing-component"
+          href="/"
           className="px-4 py-2 bg-[#293356] hover:bg-[#293356b0]  mx-auto desktop:mx-0 mb-6 ease-in duration-100 text-white w-max text-xs font-light rounded-xl"
         >
           Go to your dashboard

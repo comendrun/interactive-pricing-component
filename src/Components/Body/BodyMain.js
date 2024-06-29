@@ -16,7 +16,7 @@ export default function BodyMain() {
   const navigate = useNavigate();
 
   const sendToStart = () => {
-    navigate("/interactive-pricing-component/start", {
+    navigate("/start", {
       state: { sliderNum, isMonthly },
     });
   };
